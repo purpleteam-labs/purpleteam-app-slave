@@ -32,9 +32,9 @@ services:
       "api.key=${ZAP_API_KEY}"
     ]
     # Uncomment the bind mount to enable debug logs in Zap containers.
-    #volumes:
-    # - type: bind
-    #   # Same variables found in contOrc IAC variables.tf for cloud environment.
-    #   source: ${HOST_ZAP_LOG4J_PROPERTIES_PATH}
-    #   target: ${ZAP_LOG4J_PROPERTIES_PATH_MOUNT_TARGET}
+    volumes:
+     - type: bind
+       # Same variables found in contOrc IAC variables.tf for cloud environment.
+       source: ${HOST_ZAP_LOG4J_PROPERTIES_PATH}
+       target: ${ZAP_LOG4J_PROPERTIES_PATH_MOUNT_TARGET}
 
